@@ -1,0 +1,65 @@
+classDiagram
+
+class Library {
+    +add_book(book: Book)
+    +register_user(user: User)
+    +create_loan(book: Book, user: User)
+}
+
+class Book {
+    +title: str
+    +author: str
+    +available: bool
+    +mark_as_unavailable()
+    +mark_as_available()
+}
+
+class User {
+    +name: str
+    +email: str
+}
+
+class Loan {
+    +start_date: str
+    +end_date: str
+    +close_loan()
+}
+
+Library "1" *-- "0..*" Book
+Library "1" *-- "0..*" User
+Library "1" *-- "0..*" Loan
+
+Loan "1" --> "1" Book
+Loan "1" --> "1" UserclassDiagram
+
+class Library {
+    +add_book(book: Book)
+    +register_user(user: User)
+    +create_loan(book: Book, user: User)
+}
+
+class Book {
+    +title: str
+    +author: str
+    +available: bool
+    +mark_as_unavailable()
+    +mark_as_available()
+}
+
+class User {
+    +name: str
+    +email: str
+}
+
+class Loan {
+    +start_date: str
+    +end_date: str
+    +close_loan()
+}
+
+Library "1" *-- "0..*" Book
+Library "1" *-- "0..*" User
+Library "1" *-- "0..*" Loan
+
+Loan "1" --> "1" Book
+Loan "1" --> "1" User
